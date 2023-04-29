@@ -7,7 +7,7 @@
 body {
     display: grid;
     place-items: center;
-    background-color: hsl(0, 0%, 86%);
+    background-color: hsl(0, 0%, 94%);
     height: 100vh;
 }
 
