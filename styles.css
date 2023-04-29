@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: hsl(0, 0%, 86%);
+    height: 100vh;
+}
+
+.main-container {
+    background-color: hsl(0, 0%, 100%);
+    width: 900px;
+    height: 600px;
+    display: grid;
+    border-radius: 20px 20px 200px 20px;
+}
+
+form {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-left: 55px;
+    margin-top: 20px;
+}
+
+input {
+    border-radius: 5px;
+    font-size: 32px;
+    font-weight: 700;
+    width: 150px;
+    height: 60px;
+    border: 1px solid hsl(0, 0%, 86%);
+    margin-top: -10px;
+    padding-left: 10px;
+}
+
+input[type="number"]:hover {
+    border: 2px solid hsl(259, 100%, 65%);
+    cursor: pointer;
+}
+
+input[type="number"]:focus {
+    border: 2px solid hsl(259, 100%, 65%);
+    outline: none;
+}
+
+.inputs-title {
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: hsl(0, 1%, 44%);
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    margin-top: -95px;
+    margin-left: 55px;
+}
+
+#line {
+    background-color: hsl(0, 0%, 86%);
+    height: 3px;
+    width: 680px;
+    opacity: 0.3;
+}
+
+#arrow-btn {
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    border: none;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+
+}
+
+#arrow-btn:hover {
+    background-color: black;
+}
+
+.show-age {
+    margin-top: -30px;
+    margin-left: 55px;
+}
+
+#years-title,
+#months-title,
+#days-title {
+    font-size: 100px;
+    margin-left: 20px;
+}
+
+.years-container,
+.months-container,
+.days-container {
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+.results {
+    font-size: 100px;
+    color: hsl(259, 100%, 65%);
+}
+
+#years-title,
+#months-title,
+#days-title,
+.results,
+.checkInputs {
+    font-style: italic;
+}
+
+footer a{ 
+color: hsl(259, 100%, 65%);
+}
+
+/* styles the errors of the inputs */
+.active {
+    color: red;
+}
+
+.red-border {
+    border: 1px solid red;
+}
+
+/* desing for mobile */
+
+@media (max-width: 375px) {
+
+    .main-container {
+        width: 950px;
+        height: 1350px;
+        display: grid;
+        place-items: center;
+        margin-top: 170px;
+    }
+
+    form {
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .inputs {
+        width: 100%;
+    }
+
+    input {
+        height: 130px;
+        width: 190px;
+        font-size: 50px;
+        padding-left: 20px;
+        border-radius: 20px;
+        border: 1px solid hsl(0, 1%, 44%);
+
+    }
+
+    .inputs-title {
+        font-size: 30px;
+    }
+
+    #line {
+        background-color: hsl(0, 1%, 44%);
+        height: 3px;
+        width: 800px;
+        margin-left: -70px;
+    }
+
+    #arrow-btn {
+        position: absolute;
+        left: 400px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .btn-container {
+        margin-top: 20px;
+    }
+
+    .show-age {
+        display: grid;
+        grid-template-rows: repeat(3, 200px);
+        width: 100%;
+        margin-top: 20px;
+        
+    }
+
+    #years-title,
+    #months-title,
+    #days-title,
+    .results {
+        font-size: 150px;
+    }
+
+    .years-container,
+    .months-container,
+    .days-container{
+        margin-left: 50px;
+    }
+
+
+    footer {
+        font-size: 45px;
+        margin-top: 20px;
+    }
+}

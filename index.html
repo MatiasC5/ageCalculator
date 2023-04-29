@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body>
+  <main class="main-container">
+    <section class="inputs">
+      <form class="form">
+        <div class="day-container">
+          <h4 class="inputs-title"> DAY</h4>
+          <input placeholder="DD" type="number" id="input-day" autocomplete="off">
+          <div id="check-input-day" class="checkInputs active"></div>
+        </div>
+        <div class="month-container">
+          <h4 class="inputs-title">MONTH</h4>
+          <input placeholder="MM" type="number" id="input-month" autocomplete="off">
+          <div id="check-input-month" class="checkInputs active"></div>
+        </div>
+        <div class="year-container">
+          <h4 class="inputs-title">YEAR</h4>
+          <input placeholder="YYYY" type="number" id="input-year" autocomplete="off">
+          <div id="check-input-year" class="checkInputs active"></div>
+        </div>
+      </form>
+    </section>
+    <div class="btn-container">
+      <div id="line"></div>
+      <button id="arrow-btn"><img src="/assets/images/icon-arrow.svg" alt="arrow-icon-btn"></button>
+    </div>
+    <section class="show-age">
+      <div class="years-container">
+        <h3 id="years-result" class="results"> -- </h3>
+        <h1 id="years-title">years</h1>
+      </div>
+      <div class="months-container">
+        <h3 id="month-result" class="results"> -- </h3>
+        <h1 id="months-title">months</h1>
+      </div>
+      <div class="days-container">
+        <h3 id="days-result" class="results"> -- </h3>
+        <h1 id="days-title">days</h1>
+      </div>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/MatiasC5" target="_blank">Matias Cardoso</a>.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
