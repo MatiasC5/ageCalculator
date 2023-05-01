@@ -46,7 +46,7 @@ const checkMonthOfBirth = (monthOfBirth) => {
         addClasses()
         checkInputMonth.innerHTML = 'This field is required'
     }
-    if(Number(monthOfBirth) > 12){
+    if (Number(monthOfBirth) > 12) {
         addClasses()
         checkInputMonth.innerHTML = 'Must be a valid month'
     }
@@ -76,6 +76,7 @@ function showResults() {
     checkMonthOfBirth(inputMonth.value)
     checkYearOfBirth(inputYear.value)
     calculateAgeOfUser()
+    clearInputsError()
 }
 
 
@@ -91,11 +92,7 @@ const calculateAgeOfUser = () => {
     const currentDate = new Date(Date.now())
     const currentDay = currentDate.getDate()
     const currentMonth = currentDate.getMonth() + 1
-
-    //In this case, I subtract 1 from currentYear because when I enter my date of birth 28/10/1994,
-    // it shows that I am 29 years old, but obviously,
-    // there are still 6 months left for that date.
-    const currentYear = currentDate.getFullYear()
+    const currentYear = currentDate.getFullYear() - 1
 
     let totalDays = currentDay - day
     let totalMonths = currentMonth - month
@@ -133,4 +130,19 @@ const addClasses = () => {
     inputDay.classList.add('red-border')
     inputMonth.classList.add('red-border')
     inputYear.classList.add('red-border')
+}
+
+
+
+const clearInputsError = () => {
+    const inputs = document.querySelectorAll('input')
+    inputs.forEach(input => {
+        input.addEventListener('keydown', () => {
+            input.previousElementSibling.classList.remove('active')
+            input.classList.remove('red-border')
+            checkInputDay.innerHTML = ''
+            checkInputMonth.innerHTML = ''
+            checkInputYear.innerHTML = ''
+        })
+    })
 }
