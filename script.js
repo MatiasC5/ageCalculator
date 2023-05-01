@@ -29,13 +29,13 @@ const checkDayOfBirth = (dayOfBirth) => {
     const month = Number(inputMonth.value)
 
     if (Number(dayOfBirth) <= 0 || dayOfBirth === '' || Number(dayOfBirth) < 1 || Number(dayOfBirth) > 31) {
-        addClasses()
+        inputDay.previousElementSibling.classList.add('active')
         checkInputDay.innerHTML = 'This field is required'
     }
 
     const dayOfMonth = new Date(year, month, 0).getDate()
     if (Number(dayOfBirth) > dayOfMonth) {
-        addClasses()
+        inputDay.previousElementSibling.classList.add('active')
         checkInputDay.innerHTML = 'Must be a valid date '
     }
 
@@ -43,11 +43,11 @@ const checkDayOfBirth = (dayOfBirth) => {
 
 const checkMonthOfBirth = (monthOfBirth) => {
     if (Number(monthOfBirth) <= 0 || monthOfBirth === '' || Number(monthOfBirth) > 12) {
-        addClasses()
+        inputMonth.previousElementSibling.classList.add('active')
         checkInputMonth.innerHTML = 'This field is required'
     }
     if (Number(monthOfBirth) > 12) {
-        addClasses()
+        inputMonth.previousElementSibling.classList.add('active')
         checkInputMonth.innerHTML = 'Must be a valid month'
     }
 
@@ -57,12 +57,12 @@ const checkYearOfBirth = (yearOfBirth) => {
     const currentDate = new Date(Date.now())
 
     if (Number(yearOfBirth) <= 0 || yearOfBirth === '') {
-        addClasses()
+        inputYear.previousElementSibling.classList.add('active')
         checkInputYear.innerHTML = 'This field is required'
     }
 
     if (Number(yearOfBirth) > currentDate.getFullYear()) {
-        addClasses()
+        inputYear.previousElementSibling.classList.add('active')
         checkInputYear.innerHTML = 'Must be in the past'
     }
 
@@ -122,27 +122,26 @@ const calculateAgeOfUser = () => {
 
 
 
-const addClasses = () => {
-    inputDay.previousElementSibling.classList.add('active')
-    inputMonth.previousElementSibling.classList.add('active')
-    inputYear.previousElementSibling.classList.add('active')
-
-    inputDay.classList.add('red-border')
-    inputMonth.classList.add('red-border')
-    inputYear.classList.add('red-border')
-}
-
-
-
 const clearInputsError = () => {
-    const inputs = document.querySelectorAll('input')
-    inputs.forEach(input => {
-        input.addEventListener('keydown', () => {
-            input.previousElementSibling.classList.remove('active')
-            input.classList.remove('red-border')
+
+  
+        inputDay.addEventListener('keydown', () => {
+            inputDay.previousElementSibling.classList.remove('active')
+            inputDay.classList.remove('red-border')
             checkInputDay.innerHTML = ''
+        })  
+    
+   
+        inputMonth.addEventListener('keydown', () => {
+            inputMonth.previousElementSibling.classList.remove('active')
+            inputMonth.classList.remove('red-border')
             checkInputMonth.innerHTML = ''
+        })  
+    
+        inputYear.addEventListener('keydown', () => {
+            inputYear.previousElementSibling.classList.remove('active')
+            inputYear.classList.remove('red-border')
             checkInputYear.innerHTML = ''
-        })
-    })
+        })  
+    
 }
